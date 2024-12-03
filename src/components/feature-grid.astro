@@ -1,0 +1,113 @@
+---
+// @ts-ignore
+import { Picture, Image } from "astro:assets";
+import Card from "@components/card.astro";
+import IntegrationImg from "../assets/integrations.svg?url";
+import FeatureImgOne from "../assets/features/2.png";
+import FeatureImgTwo from "../assets/features/2.png";
+import FeatureImgThree from "../assets/features/3.png";
+---
+
+<div class="mt-24">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Deliver impactful <span class="text-indigo-600">voice interactions</span>
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Transform the way you engage with customers through intelligent, real-time communication with 
+    Hanc AI Voice Assistant platform. 
+  </p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-5 mt-16 gap-10">
+  <Card class="lg:col-span-3" color="purple">
+    <Fragment slot="image">
+      <Picture
+        src={FeatureImgOne}
+        alt="Feature image"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </Fragment>
+    <span slot="badge">Inteligent</span>
+    <span slot="title">Advanced AI</span>
+    <span slot="desc">
+      Leverage a custom Large Language Model (LLM) that understands and responds to complex queries 
+      with precision.
+    </span>
+  </Card>
+  <Card class="lg:col-span-2" color="indigo">
+    <Fragment slot="image">
+      <Picture
+        src={FeatureImgTwo}
+        alt="Feature image"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </Fragment>
+    <span slot="badge">Natural</span>
+    <span slot="title">Human-Like Conversations</span>
+    <span slot="desc">
+      Create natural, fluid voice interactions that feel personal, 
+      driving deeper customer engagement.</span
+    >
+  </Card>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
+  <Card color="indigo" size="sm">
+    <Fragment slot="image">
+      <Picture
+        src={FeatureImgThree}
+        alt="Feature image"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </Fragment>
+    <span slot="badge">Emotion-Aware</span>
+    <span slot="title">Real-Time Sentiment Analysis</span>
+    <span slot="desc">
+      Detect and adapt to customer emotions instantly, improving satisfaction and delivering empathetic service.</span
+    >
+  </Card>
+
+  <Card color="purple" size="sm">
+    <Fragment slot="image">
+      <Picture
+        src={FeatureImgTwo}
+        alt="Feature image"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </Fragment>
+    <span slot="badge">Connected</span>
+    <span slot="title">Conversational API </span>
+    <span slot="desc">
+      Seamlessly connect with your CRM, calendar, payment systems, and more to streamline your 
+      operations. Integrate voice AI into your applications</span
+    >
+  </Card>
+
+  <Card size="sm">
+    <Fragment slot="image">
+      <!-- // svg image. cannot use <picture/> as of now -->
+      <Image
+        src={IntegrationImg}
+        alt="Feature image"
+        width="909"
+        height="823"
+        class="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </Fragment>
+    <span slot="badge">Effizient</span>
+    <span slot="title">Smart Call Management</span>
+    <span slot="desc">
+      Manage inbound calls with intelligence and smooth call transfers for 
+      a superior customer experience.</span
+    >
+  </Card>
+</div>

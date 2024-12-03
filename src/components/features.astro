@@ -1,0 +1,78 @@
+---
+// @ts-ignore
+import Badge from "@components/ui/badge.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "AI Secretary",
+    description:
+      "Automate routine tasks like appointment scheduling and customer follow-ups.",
+    icon: "ai",
+  },
+  {
+    title: "24/7 Customer Support",
+    description:
+      "Provide always-on assistance without the need for additional staff.",
+    icon: "phone",
+  },
+  {
+    title: "Sales Lead Qualification",
+    description:
+      "Effortlessly qualify leads and handle sales call returns with voice automation.",
+    icon: "arrow_up",
+  },
+  {
+    title: "HR Pre-Screening",
+    description:
+      "Simplify your hiring process by automating initial candidate screenings.",
+    icon: "hire",
+  },
+  {
+    title: "Insurance Coverage Checks",
+    description:
+      "Streamline insurance inquiries and claims processing for a smoother experience.",
+    icon: "checks",
+  },
+  {
+    title: "Order Management Assistant",
+    description:
+      "Automate order processing by taking customer orders, confirming details, and updating your system in real time for a seamless purchasing experience.",
+    icon: "assistance",
+  },
+];
+---
+
+<!-- <div class="mt-16">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    We have got more awesome <span class="text-indigo-600">features</span>
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Use this section to highlight not so important features of your product.
+  </p>
+</div> -->
+<div class="mt-24 max-w-3xl mx-auto flex flex-col items-center justify-center">
+  <Badge color="purple">Empower + Elevate</Badge>
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
+    Unlock New Possibilities
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    Redefine the way your business functions with intelligent voice automation. Effortlessly streamline operations, boost efficiency, and drive customer satisfaction.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-16">
+  {
+    features.map((item) => (
+      <div class="flex flex-col gap-4 items-start group hover:bg-slate-50 hover:border-slate-100 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+        <div class="mt-1 bg-indigo-50 border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-lg grid place-items-center  p-2 w-10 h-10 shrink-0">
+          <Icon class="text-indigo-500" name={item.icon} size="24" />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
